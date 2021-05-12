@@ -1,0 +1,43 @@
+
+
+<div class="container">
+    <div class="row">
+               <div id="custom-search-input">
+                                <div class="input-group col-md-20" style="text-align: center">
+                                    <input type="text" class="search-query form-control" placeholder="Search"  name="name" [(ngModel)]="firstName"/>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-danger" type="button" (click)="findEmployeeByFname()">
+                                            <span class=" glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                </div>
+    </div>
+</div>
+
+<table class="table table-hover">
+ 
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email Id</th>
+      <th>Department</th>
+      <th>City</th>
+      <th>Actions</th>
+    </tr>
+  
+ <tbody>
+    <tr *ngFor = "let employee of employees1" >
+      <td>{{employee.firstName}}</td>
+      <td>{{employee.lastName}}</td>
+      <td>{{employee.emailId}}</td>
+      <td>{{employee.department}}</td>
+      <td>{{employee.city}}</td>
+      <td>
+        <button (click)="updateEmployee(employee.id)" class="btn btn-primary">Update</button>
+        <button (click)="deleteEmployee(employee.id)" class="btn btn-danger" style="margin-left:10px">Delete</button>
+        <button (click)="employeeDetails(employee.id)" class="btn btn-warning" style="margin-left:10px">View</button>
+      </td>
+    </tr>
+</tbody>
+</table>

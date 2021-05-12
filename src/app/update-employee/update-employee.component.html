@@ -1,0 +1,29 @@
+
+<div class="col-md-6 offset-md-3" id="div1">
+    <h2>Update {{employee.firstName}} {{employee.lastName}}'s Details</h2><br>
+    
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label>Email Id</label>
+            <input type="text" class="form-control" id="emailId" formControlName="emailId"
+                [(ngModel)]="employee.emailId" name="emailId" required>
+                <span class="error" *ngIf="emailId.touched && emailId.pristine">Email Required</span>
+        </div>
+        <div class="form-group">
+            <label>Department</label>
+            <input type="text" class="form-control" id="department" formControlName="department"
+                [(ngModel)]="employee.department" name="department" required>
+                <span class="error" *ngIf="department.touched && department.pristine">Department Required</span>
+        </div>    
+        <div class="form-group">
+            <label>City</label>
+            <input type="text" class="form-control" id="city" formControlName="city"
+                [(ngModel)]="employee.city" name="city" required>
+                <span class="error" *ngIf="city.touched && city.pristine">City Required</span>
+        </div>    
+        
+        <button class="btn btn-outline-primary" type="submit" [disabled]="emailId.invalid && department.invalid && city.invalid">Update</button>
+    </form>
+    </div>
+

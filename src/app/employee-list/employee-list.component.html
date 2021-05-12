@@ -1,0 +1,31 @@
+<br>
+<input type="text" id="searchTextId" [(ngModel)]="searchText" name="searchText" placeholder="Search By Name"> <br><br>
+
+<h2>Employee List</h2>
+<table class="table table-hover">
+ 
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email Id</th>
+      <th>Department</th>
+      <th>City</th>
+      <th>Actions</th>
+    </tr>
+  
+ <tbody>
+    <tr *ngFor = "let employee of employees | filterPipe:searchText" >
+      <td>{{employee.firstName}}</td>
+      <td>{{employee.lastName}}</td>
+      <td>{{employee.emailId}}</td>
+      <td>{{employee.department}}</td>
+      <td>{{employee.city}}</td>
+      <td>
+        <button (click)="updateEmployee(employee.id)" class="btn btn-primary">Update</button>
+        <button (click)="deleteEmployee(employee.id)" class="btn btn-danger" style="margin-left:10px">Delete</button>
+        <button (click)="employeeDetails(employee.id)" class="btn btn-warning" style="margin-left:10px">View</button>
+      </td>
+    </tr>
+</tbody>
+</table>
+

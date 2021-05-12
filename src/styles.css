@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+.footer{
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background-color: black;
+    text-align: left;
+    color:white;
+}
+
+#neosoft{
+    font-size: 25px;
+    color:#e40000;
+}

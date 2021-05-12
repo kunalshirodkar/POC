@@ -1,0 +1,38 @@
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="#" id="neosoft">
+    <img src="https://lh3.googleusercontent.com/proxy/P-6MrDEW2nBxvBpRACPHbUoyxv-ZaAg4wQdGycy4sr0CbgW5VfhU_5sTF9EzRAwZxDWTYIDG4VRuIoJOAq8vjeZClzrW9i35aKN2fuaFl3c2-ZKEbSDgArknfsmZXhX39CYuuzCf"
+     width="40" height="40" class="d-inline-block align-top" alt="" >
+    <b style="margin-left: 10px">NeoSoft Technologies</b>
+    </a>
+
+    <ul  class="navbar-nav"> 
+        <li class="nav-item">
+            <a routerLink="employees" routerLinkActive="active" class="nav-link" (click)="checkIsLoggedIn()">Employee List</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="create-employee" routerLinkActive="active" class="nav-link" (click)="checkIsLoggedIn()">Add Employee</a>
+        </li> 
+        <!--  <li class="nav-item">
+            <a routerLink="search" routerLinkActive="active" class="nav-link" (click)="checkIsLoggedIn()">Search</a>
+        </li>  -->
+       <li>
+            <a class="nav-link" routerLink="logout" (click)=handleLogout() routerLinkActive="active">Logout</a>
+        </li>  
+    </ul>
+</nav>
+
+
+<div class="container"> 
+    <router-outlet></router-outlet>
+</div>   
+
+
+
+<footer class="footer">
+    <div class="container">
+        <span>Copyright &#169; Spring Boot and Angular POC 7 by Kunal... </span>
+    </div>
+</footer>
+
